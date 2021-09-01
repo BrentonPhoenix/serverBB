@@ -1,7 +1,7 @@
-module.exports = function(req, res, next) {
-    res.header('access-control-allow-origin', '*');
-    res.header('access-control-allow-headers', 'GET, POST, PUT, DELETE');
-    res.header('access-control-allow-headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+module.exports = (req, res, next)=> {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "POST, PUT, GET, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, Accept, Authorization");
+    return next();
 
-    next();
 }
