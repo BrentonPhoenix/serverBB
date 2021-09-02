@@ -9,7 +9,7 @@ const {UniqueConstraintError} = require('sequelize/lib/errors')
 
 router.post('/register', async (req,res) => {
     let { email, password } = req.body.user;
-    if(password.length >= 5){
+    if(password.length >= 5 && email.includes("@")){
         try{
         const User = await UserModel.create({
             email,
@@ -34,7 +34,7 @@ router.post('/register', async (req,res) => {
         }
     } else { 
         res.status(400).json({
-            message: "Password is too short, please enter a password that is at least five charcters long."
+            message: "Password or email noncomplient, please try again."
         })
     }
 })
