@@ -11,7 +11,7 @@ const User = db.define("user", {
     },
     password: {
         require: true,
-        type: DataTypes.STRING(5-100),
+        type: DataTypes.STRING,
         allowNull: false,
     },
     bio: {
