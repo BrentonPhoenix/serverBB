@@ -31,7 +31,7 @@ const Monster = db.define('monsters', {
         
     },
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1234),
         
     },
 
