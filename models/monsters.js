@@ -32,7 +32,7 @@ const Monster = db.define('monsters', {
     },
     description: {
         type: DataTypes.STRING(1234),
-        
+
     },
 
     owner: {
