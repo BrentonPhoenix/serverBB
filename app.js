@@ -15,8 +15,8 @@ app.use("/my-monsters", controllers.monsterController);
 dbConnection.authenticate()
     .then(() => dbConnection.sync())
     .then(() => {
-        app.listen(4000, () => {
-            console.log(`[Server]: App is listening on 4000.`);
+        app.listen(process.env.PORT, () => {
+            console.log(`[Server]: App is listening on ${process.env.PORT}.`);
         })
     })
     .catch((err) => {
